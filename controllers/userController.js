@@ -67,6 +67,7 @@ module.exports = {
       removeFriend(req, res) {
         User.findOneAndUpdate(
           { _id: req.params.userId },
+
           { $pull: { friends: { friendsId: req.params.friendsId } } },
         )
           .then((user) =>
@@ -80,9 +81,16 @@ module.exports = {
       },
 
       updateUser(req, res) {
-        User.findOneAndUpdate(
-            {_id: req.params.userId },
-            { $push: {}}
+        let _id = req.params.userId;
+        let update = req.body
+        User.findByIdAndUpdate(_id, update, { new:true }, function(err, user) {
+            if (err) {
+                console.error(err);
+                res.status(500).json(err)
+            } else {
+                res.json(user);
+            }
+        }
         )
       }
 };

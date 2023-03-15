@@ -5,7 +5,7 @@ const thoughtSchema = new Schema({
   thoughttext: { type: String, required: true, maxLength: 280, minLength: 1 },
   createdAt: { type: Date, default: Date.now },
   username: { type: String, required: true },
-  reactions: ['reaction'],
+  reactions: [Reaction],
 },
 {
   toJSON: {
