@@ -1,4 +1,4 @@
-## Social Networking API
+# Social Networking API
 
 ## Description
 
@@ -23,7 +23,7 @@ Run npm start to start the server.
 
 The following endpoints are available:
 
-# Users
+### Users
 
 GET /users: Get a list of all users.
 GET /users/:id: Get a specific user by ID.
@@ -31,7 +31,7 @@ POST /users: Create a new user.
 PUT /users/:id: Update an existing user.
 DELETE /users/:id: Delete a user by ID.
 
-# Thoughts
+### Thoughts
 
 GET /thoughts: Get a list of all thoughts.
 GET /thoughts/:id: Get a specific thought by ID.
@@ -39,12 +39,12 @@ POST /thoughts: Create a new thought.
 PUT /thoughts/:id: Update an existing thought.
 DELETE /thoughts/:id: Delete a thought by ID.
 
-# Friends
+### Friends
 
 POST /users/:userId/friends: Add a friend to a user.
 DELETE /users/:userId/friends/:friendId: Remove a friend from a user.
 
-# Reactions
+### Reactions
 
 POST /thoughts/:thoughtId/reactions: Add a reaction to a thought.
 DELETE /thoughts/:thoughtId/reactions/:reactionId: Remove a reaction from a thought.
@@ -53,21 +53,21 @@ DELETE /thoughts/:thoughtId/reactions/:reactionId: Remove a reaction from a thou
 
 The following data models are used in the API:
 
-# User
+### User
 
 username (string): The username of the user.
 email (string): The email address of the user.
 thoughts (array of Thought IDs): The thoughts created by the user.
 friends (array of User IDs): The friends of the user.
 
-# Thought
+### Thought
 
 thoughtText (string): The text of the thought.
 createdAt (timestamp): The timestamp when the thought was created.
 username (string): The username of the user who created the thought.
 reactions (array of Reaction objects): The reactions to the thought.
 
-# Reaction
+### Reaction
 
 reactionBody (string): The text of the reaction.
 username (string): The username of the user who created the reaction.
